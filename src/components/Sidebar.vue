@@ -29,13 +29,14 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/colors";
 .sidebar {
-  background: $c-light;
   flex: 1;
   height: 100%;
-  min-width: 28%;
+  min-width: 20%;
   overflow: auto;
+  background: $c-light-gray;
+  color: rgba($c-dark-blue, 0.7);
   &__content {
-    padding: 30px;
+    padding: 20px;
     a {
       text-decoration: none;
       color: inherit;

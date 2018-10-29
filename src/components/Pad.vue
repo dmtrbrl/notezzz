@@ -50,6 +50,7 @@ export default {
     outline: none;
     border: 0;
     padding: 25px 20px 20px 30px;
+    font-weight: bold;
   }
   &__text {
     padding: 20px 30px;

@@ -5,7 +5,6 @@
         </a>
         <a href="#" class="note__content" @click.prevent="openNote(note)">
             <strong class="note__title">{{ note.title || 'Untitled note' }}</strong>
-            <p class="note__body">{{ note.text || 'Empty' }}</p>
         </a>
     </div>
 </template>
@@ -26,9 +25,7 @@ export default {
   display: flex;
   color: inherit;
   text-decoration: none;
-  border-bottom: 2px solid $c-light-gray;
-  opacity: 0.3;
-  transition: opacity 300ms ease;
+  border-bottom: 1px solid rgba($c-light-gray, 0.1);
   &:hover {
     opacity: 1;
     .note__title {
@@ -39,7 +36,7 @@ export default {
     }
   }
   &__content {
-    padding: 30px;
+    padding: 20px;
     flex: 2;
     overflow: hidden;
     text-decoration: none;
@@ -49,13 +46,6 @@ export default {
     display: block;
     margin: 0;
     font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  &__body {
-    margin-bottom: 0;
-    font-size: 0.9em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
