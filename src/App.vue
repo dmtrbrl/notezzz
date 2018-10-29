@@ -48,13 +48,12 @@ body {
 .header {
   flex-shrink: 0;
   width: 100%;
-  height: 50px;
+  height: 60px;
   padding: 15px 20px;
   background: $c-dark-blue;
   &__logo {
     display: block;
-    height: 20px;
-    margin-top: -2px;
+    height: 30px;
   }
 }
 .main {
