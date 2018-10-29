@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar {
-  background: #f9f9f9;
+  background: #f9f7f7;
   flex: 1;
   height: 100%;
   min-width: 28%;

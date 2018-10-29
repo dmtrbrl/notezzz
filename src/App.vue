@@ -1,7 +1,14 @@
 <template>
   <div id="app">
-    <sidebar />
-    <pad />
+    <header class="header">
+      <a href="#">
+        <img src="@/assets/img/logo.svg" alt="notezzz" class="header__logo">
+      </a>
+    </header>
+    <section class="main">
+      <sidebar />
+      <pad />
+    </section>
   </div>
 </template>
 
@@ -25,14 +32,30 @@ body {
   height: 100%;
 }
 body {
-  color: #2c3e50;
+  color: #112d4e;
   overflow: hidden;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.header {
+  flex-shrink: 0;
+  width: 100%;
+  height: 50px;
+  padding: 15px 20px;
+  background: #3f72af;
+  &__logo {
+    display: block;
+    height: 20px;
+    margin-top: -2px;
+  }
+}
+.main {
   display: flex;
   height: 100%;
 }
