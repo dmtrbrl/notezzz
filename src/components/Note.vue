@@ -21,11 +21,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/colors";
 .note {
   display: flex;
   color: inherit;
   text-decoration: none;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid $c-light-gray;
   opacity: 0.3;
   transition: opacity 300ms ease;
   &:hover {
@@ -64,9 +65,9 @@ export default {
     width: 50px;
     position: relative;
     margin-left: -50px;
-    background: #cc4466;
+    background: $c-red;
     min-height: 100%;
-    color: #fff;
+    color: $c-white;
     text-decoration: none;
     transition: margin-left 300ms cubic-bezier(0, 1, 1, 1);
     &-icon {

@@ -22,6 +22,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i&subset=cyrillic");
+@import "./assets/scss/colors";
 * {
   box-sizing: border-box;
 }
@@ -32,11 +34,11 @@ body {
   height: 100%;
 }
 body {
-  color: #112d4e;
+  color: $c-dark-blue;
   overflow: hidden;
 }
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Ubuntu", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -48,7 +50,7 @@ body {
   width: 100%;
   height: 50px;
   padding: 15px 20px;
-  background: #3f72af;
+  background: $c-dark-blue;
   &__logo {
     display: block;
     height: 20px;

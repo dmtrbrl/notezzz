@@ -38,6 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/scss/placeholders";
+@import "../assets/scss/colors";
 .pad {
   display: flex;
   flex: 4;
@@ -58,11 +59,11 @@ export default {
     outline: none;
     font: inherit;
     line-height: 2;
-    border-top: 1px solid rgba(#eee, 0.3);
+    border-top: 1px solid rgba($c-light-gray, 0.3);
   }
   &__footer {
     padding: 20px 30px;
-    border-top: 1px solid rgba(#eee, 0.3);
+    border-top: 1px solid rgba($c-light-gray, 0.3);
     &-items {
       @extend %inline-list;
       font-size: 0.9em;

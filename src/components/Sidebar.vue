@@ -27,8 +27,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/colors";
 .sidebar {
-  background: #f9f7f7;
+  background: $c-light;
   flex: 1;
   height: 100%;
   min-width: 28%;
