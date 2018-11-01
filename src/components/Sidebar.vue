@@ -18,10 +18,10 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   components: { Note },
   computed: {
-    ...mapGetters(["notes"])
+    ...mapGetters("notes", ["notes"])
   },
   methods: {
-    ...mapActions(["clearCurrentNote"])
+    ...mapActions("notes", ["clearCurrentNote"])
   }
 };
 </script>
@@ -33,7 +33,7 @@ export default {
   height: 100%;
   min-width: 20%;
   overflow: auto;
-  background: $c-light-gray;
+  background: rgba($c-light-gray, 0.3);
   color: rgba($c-dark-blue, 0.7);
   &__content {
     padding: 20px;

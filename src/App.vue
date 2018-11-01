@@ -1,23 +1,19 @@
 <template>
   <div id="app">
-    <header class="header">
-      <a href="#">
-        <img src="@/assets/img/logo.svg" alt="notezzz" class="header__logo">
-      </a>
-    </header>
+    <v-header/>
     <section class="main">
-      <sidebar />
-      <pad />
+      <router-view></router-view>
     </section>
   </div>
 </template>
 
 <script>
-import Pad from "@/components/Pad";
-import Sidebar from "@/components/Sidebar";
+import Header from "@/components/Header";
 export default {
   name: "app",
-  components: { Pad, Sidebar }
+  components: {
+    "v-header": Header
+  }
 };
 </script>
 
@@ -43,21 +39,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
-  height: 100%;
-}
-.header {
-  flex-shrink: 0;
   width: 100%;
-  height: 60px;
-  padding: 15px 20px;
-  background: $c-dark-blue;
-  &__logo {
-    display: block;
-    height: 30px;
-  }
+  height: 100%;
 }
 .main {
   display: flex;
+  width: 100%;
   height: 100%;
 }
 </style>

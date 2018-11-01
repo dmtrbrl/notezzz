@@ -14,7 +14,7 @@ import { mapActions } from "vuex";
 export default {
   props: ["note"],
   methods: {
-    ...mapActions(["openNote", "deleteNote"])
+    ...mapActions("notes", ["openNote", "deleteNote"])
   }
 };
 </script>

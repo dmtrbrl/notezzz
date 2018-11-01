@@ -16,13 +16,13 @@ import { mapGetters, mapActions } from "vuex";
 import throttle from "lodash/throttle";
 export default {
   computed: {
-    ...mapGetters(["note", "lastSaved", "wordCount"]),
+    ...mapGetters("notes", ["note", "lastSaved", "wordCount"]),
     throttleSaveNote() {
       return throttle(this.saveNote, 1000);
     }
   },
   methods: {
-    ...mapActions(["saveNote"]),
+    ...mapActions("notes", ["saveNote"]),
     save() {
       if (!this.note.title && !this.note.text) return;
       if (!this.note.id) {
