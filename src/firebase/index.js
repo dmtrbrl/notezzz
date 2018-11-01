@@ -1,6 +1,6 @@
 import firebase from "firebase";
 
-import { firebaseConfig } from "@/api-configs";
+import { firebaseConfig } from "@/api-keys";
 
 const authProviders = {
   google: new firebase.auth.GoogleAuthProvider()

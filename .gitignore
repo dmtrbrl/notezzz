@@ -3,6 +3,7 @@
 node_modules
 /dist
 /design_src
+api-keys.js
 
 # local env files
 .env.local
