@@ -3,7 +3,8 @@ import firebase from "firebase";
 import { firebaseConfig } from "@/api-keys";
 
 const authProviders = {
-  google: new firebase.auth.GoogleAuthProvider()
+  google: new firebase.auth.GoogleAuthProvider(),
+  github: new firebase.auth.GithubAuthProvider()
 };
 
 export default {
@@ -16,32 +17,37 @@ export default {
 
     firebase.auth().onAuthStateChanged(user => {
       this.context.$store.dispatch("user/setCurrentUser");
-
       let requireAuth = this.context.$route.matched.some(
         record => record.meta.requireAuth
       );
       let guestOnly = this.context.$route.matched.some(
         record => record.meta.guestOnly
       );
-
       if (requireAuth && !user) this.context.$router.push("auth");
       else if (guestOnly && user) this.context.$router.push("/");
     });
   },
+
   signInWithGoogle() {
-    firebase
-      .auth()
-      .signInWithPopup(authProviders.google)
-      .then(result => {
-        console.log("successfully signed in with Google", result.user);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    return firebase.auth().signInWithPopup(authProviders.google);
   },
+
+  signInWithGithub() {
+    return firebase.auth().signInWithPopup(authProviders.github);
+  },
+
+  signInWithEmailAndPassword(email, password) {
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+  },
+
+  createUserWithEmailAndPassword(email, password) {
+    return firebase.auth().createUserWithEmailAndPassword(email, password);
+  },
+
   setCurrentUser() {
     return this.context ? firebase.auth().currentUser : null;
   },
+
   signOut() {
     firebase.auth().signOut();
   }

@@ -9,7 +9,7 @@
           Sign In
         </router-link>
         <span v-else @click="signOut">
-          {{ user.displayName }}
+          {{ user.displayName || user.email }}
         </span>
       </div>
     </div>
