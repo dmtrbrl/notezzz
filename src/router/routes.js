@@ -1,18 +1,14 @@
-import Home from "@/components/Home";
-import Auth from "@/components/Auth";
+import Editor from "@/components/Editor";
 
 export default [
   {
-    name: "home",
+    name: "addNote",
     path: "/",
-    component: Home
+    component: Editor
   },
   {
-    name: "auth",
-    path: "/auth",
-    component: Auth,
-    meta: {
-      guestOnly: true
-    }
+    name: "editNote",
+    path: "/:id",
+    component: Editor
   }
 ];

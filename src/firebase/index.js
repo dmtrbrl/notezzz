@@ -16,7 +16,7 @@ export default {
     this.db = firebase.initializeApp(firebaseConfig);
 
     firebase.auth().onAuthStateChanged(user => {
-      this.context.$store.dispatch("user/setCurrentUser");
+      this.context.$store.dispatch("auth/setCurrentUser");
       let requireAuth = this.context.$route.matched.some(
         record => record.meta.requireAuth
       );
@@ -34,14 +34,6 @@ export default {
 
   signInWithGithub() {
     return firebase.auth().signInWithPopup(authProviders.github);
-  },
-
-  signInWithEmailAndPassword(email, password) {
-    return firebase.auth().signInWithEmailAndPassword(email, password);
-  },
-
-  createUserWithEmailAndPassword(email, password) {
-    return firebase.auth().createUserWithEmailAndPassword(email, password);
   },
 
   setCurrentUser() {

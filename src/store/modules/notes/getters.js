@@ -12,7 +12,3 @@ export const lastSaved = state => {
   }
   return moment(state.note.lastSaved).calendar();
 };
-
-export const wordCount = state => {
-  return state.note.text ? state.note.text.split(/[\s\n]+/).length : 0;
-};
