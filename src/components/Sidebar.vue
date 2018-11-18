@@ -1,10 +1,5 @@
 <template>
     <aside class="sidebar">
-        <div class="logo">
-          <router-link :to="{name: 'addNote'}" class="logo__link">
-            <img src="@/assets/img/logo.svg" alt="notezzz" class="logo__img">
-          </router-link>
-        </div>
         <div class="search">
           <form @submit.prevent class="search__form" autocomplete="off">
             <input type="text" v-model.trim="searchString" placeholder="Search by title" class="search__input">
@@ -98,20 +93,8 @@ export default {
   }
 }
 
-.logo {
-  display: flex;
-  flex-shrink: 0;
-  padding: 15px 20px;
-  border-bottom: 1px solid rgba($c-light, 0.05);
-  &__img {
-    display: block;
-    height: 20px;
-    width: auto;
-  }
-}
-
 .search {
-  padding: 15px 20px;
+  padding: 15px;
   &__form {
     position: relative;
   }
@@ -149,7 +132,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px 10px;
+    padding: 5px 15px 15px;
     border-bottom: 1px solid rgba($c-light, 0.05);
   }
   &__heading {
@@ -184,7 +167,7 @@ export default {
       background: rgba($c-light, 0.2);
     }
     &-empty {
-      padding: 20px;
+      padding: 15px;
       font-size: 12px;
     }
   }
@@ -192,7 +175,7 @@ export default {
 
 .auth {
   flex-shrink: 0;
-  padding: 20px;
+  padding: 20px 15px;
   border-top: 1px solid rgba($c-light, 0.05);
   font-size: 12px;
   &__link {

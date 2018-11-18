@@ -103,7 +103,7 @@ export default {
 @import "../assets/scss/colors";
 .editor {
   width: 100%;
-  transition: background 0.5s ease;
+  transition: background 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
   overflow-y: auto;
   &--light {
     background-color: $c-light;
@@ -121,13 +121,15 @@ export default {
     justify-content: space-between;
     width: 100%;
     height: 50px;
-    padding: 15px 20px;
-    transition: background-color 0.5s ease;
+    padding: 20px;
+    transition: background-color 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
     &-left {
       display: flex;
     }
     &-button {
       display: block;
+      width: 24px;
+      height: 20px;
       border: 0;
       padding: 0;
       border-radius: 0;
@@ -135,17 +137,18 @@ export default {
       background: transparent;
       cursor: pointer;
       opacity: 0.5;
-      transition: opacity 0.5s ease;
+      transition: opacity 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
       &:hover {
         opacity: 0.8;
       }
       &:not(:first-child) {
-        margin-left: 20px;
+        margin-left: 10px;
       }
     }
     &-icon {
       display: block;
-      transition: fill 0.5s ease;
+      margin: 0 auto;
+      transition: fill 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
     }
     &-delete {
       display: block;
@@ -158,7 +161,7 @@ export default {
       cursor: pointer;
       outline: none;
       opacity: 0.8;
-      transition: opacity 0.5s ease;
+      transition: opacity 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
       &:hover {
         opacity: 1;
       }
@@ -193,7 +196,7 @@ export default {
     padding: 15px 20px;
     font-weight: bold;
     background: transparent;
-    transition: color 0.5s ease;
+    transition: color 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
     color: inherit;
   }
   &__text {
@@ -206,7 +209,7 @@ export default {
     font: inherit;
     line-height: 2;
     background: transparent;
-    transition: color 0.5s ease;
+    transition: color 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
     color: inherit;
   }
 }
