@@ -6,8 +6,8 @@ import mutations from "./mutations";
 import * as actions from "./actions";
 import * as getters from "./getters";
 
-import notes from "./modules/notes";
 import auth from "./modules/auth";
+import notes from "./modules/notes";
 
 Vue.use(Vuex);
 

@@ -1,5 +1,15 @@
 import * as mutations from "./mutation-types";
 
+export const addNote = ({ state, dispatch }, router) => {
+  dispatch("openNote", null);
+  dispatch("saveNote").then(() => {
+    router.replace({
+      name: "editNote",
+      params: { id: state.note.id }
+    });
+  });
+};
+
 export const saveNote = ({ commit, dispatch, state }) => {
   // touch last saved timestamp
   commit(mutations.TOUCH_LAST_SAVED);

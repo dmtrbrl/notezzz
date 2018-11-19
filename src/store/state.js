@@ -1,3 +1,4 @@
 export default {
-  sidebar: true
+  sidebar: true,
+  theme: localStorage.getItem("theme") || "light"
 };

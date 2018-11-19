@@ -38,19 +38,15 @@ import { mapGetters, mapActions } from "vuex";
 import throttle from "lodash/throttle";
 export default {
   name: "editor",
-  data() {
-    return {
-      theme: null
-    };
-  },
   computed: {
+    ...mapGetters(["theme"]),
     ...mapGetters("notes", ["note", "notes"]),
     throttleSaveNote() {
       return throttle(this.saveNote, 1000);
     }
   },
   methods: {
-    ...mapActions(["toggleSidebar"]),
+    ...mapActions(["toggleSidebar", "setTheme"]),
     ...mapActions("notes", ["saveNote", "openNote", "deleteNote"]),
     save() {
       if (!this.note.title && !this.note.text) return;
@@ -73,13 +69,7 @@ export default {
       this.openNote(note);
     },
     changeTheme() {
-      if (this.theme == "light") {
-        this.theme = "dark";
-        localStorage.setItem("theme", "dark");
-      } else {
-        this.theme = "light";
-        localStorage.setItem("theme", "light");
-      }
+      this.setTheme(this.theme == "light" ? "dark" : "light");
     },
     confirmDeleteNote() {
       if (confirm("Delete note")) {
@@ -94,7 +84,6 @@ export default {
   },
   mounted() {
     this.setCurrentNote();
-    this.theme = localStorage.getItem("theme") || "light";
   }
 };
 </script>

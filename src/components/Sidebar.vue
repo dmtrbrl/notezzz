@@ -11,11 +11,11 @@
         <div class="notes">
           <div class="notes__header">
             <strong class="notes__heading">Notes</strong>
-            <router-link :to="{name: 'addNote'}" class="notes__add" title="Add Note">
+            <span class="notes__add" title="Add Note" @click="addNote($router)">
               <svg class="notes__add-icon">
                 <use href="#plusIcon" />
               </svg>
-            </router-link>
+            </span>
           </div>
           <div class="notes__list">
             <div v-if="notes.length">
@@ -29,19 +29,19 @@
             </div>
           </div>
         </div>
-        <div class="auth">
+        <!-- <div class="auth">
           <router-link v-if="!user" :to="{name: 'auth'}" class="auth__link auth__link--button">
             Sign In
           </router-link>
           <span v-else @click="signOut">
             {{ user.displayName || user.email }}
           </span>
-        </div>
+        </div> -->
     </aside>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import firebase from "@/firebase";
 
 import Note from "@/components/Note";
@@ -67,6 +67,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions("notes", ["addNote"]),
     signOut() {
       firebase.signOut();
     }
@@ -144,6 +145,7 @@ export default {
     display: block;
     width: 20px;
     height: 20px;
+    cursor: pointer;
     &-icon {
       display: block;
       width: 100%;

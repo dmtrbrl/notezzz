@@ -1,10 +1,11 @@
+import Home from "@/components/Home";
 import Editor from "@/components/Editor";
 
 export default [
   {
-    name: "addNote",
+    name: "home",
     path: "/",
-    component: Editor
+    component: Home
   },
   {
     name: "editNote",
